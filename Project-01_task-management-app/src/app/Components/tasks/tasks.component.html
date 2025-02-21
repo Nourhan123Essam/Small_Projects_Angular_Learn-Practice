@@ -11,7 +11,7 @@
     </header>
 
     <ul>
-        <li *ngFor="let task of userTasks()">
+        <li *ngFor="let task of userTasks">
             <app-task  [task]="task" (complete)="onTaskCompleted($event)"/>
         </li>
     </ul>

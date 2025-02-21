@@ -16,11 +16,13 @@ header {
   border-bottom-right-radius: 12px;
   border-bottom-left-radius: 12px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+  color: #c3b3d8;
 }
 
 img {
-  width: 3.5rem;
+  width: 4rem;
   object-fit: contain;
+  border-radius: 50%;
 }
 
 h1 {

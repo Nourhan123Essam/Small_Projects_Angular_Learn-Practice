@@ -21,6 +21,7 @@ main {
     font-size: 1.15rem;
     margin: 0;
     text-align: center;
+    color: #c3b3d8;
 }
 
 @media (min-width: 768px) {

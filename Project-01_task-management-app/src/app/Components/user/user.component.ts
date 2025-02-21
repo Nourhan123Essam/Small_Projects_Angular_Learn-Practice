@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output, output } from '@angular/core';
-import { DUMMY_USERS } from '../../../mock-data/dummy-users';
 import { user } from './user.model';
 
 @Component({
@@ -11,6 +10,7 @@ import { user } from './user.model';
 export class UserComponent {
   @Input({required: true}) selectedUser!:user;
   @Output() select = new EventEmitter<string>();
+  @Input({required: true}) selectedId!: string | null;
 
   get imagePath(){
     return 'assets/users/' + this.selectedUser.avatar;

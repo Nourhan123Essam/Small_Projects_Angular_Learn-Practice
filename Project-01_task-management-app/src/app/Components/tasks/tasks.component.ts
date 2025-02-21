@@ -11,21 +11,20 @@ import { CommonModule } from '@angular/common';
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.css'
 })
-export class TasksComponent implements OnInit{
+export class TasksComponent {
   
   @Input({required:true})userId: string = '';
   @Input({required:true}) name: string = '';
   isAddingTask: boolean = false;
   tasks = dummyTasks;
-  userTasks = signal<task[]>([]);
-
-  ngOnInit(): void {
-    this.userTasks.set(this.tasks().filter(task => task.userId == this.userId));
+ 
+  get userTasks(){
+    return this.tasks().filter(task => task.userId == this.userId);
   }
 
   //// task component related functions ////
   onTaskCompleted(id: string) {
-    this.userTasks.update(tasks => tasks.filter(task => task.id !== id));
+    this.tasks.set(this.tasks().filter(task => task.id !== id));
   }
 
   //// add-task component related functions ////
